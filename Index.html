@@ -3,34 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>hng-stage-0</title>
-    <link rel="stylesheet" href="Stylesheet.css">
+    <title>HNG Stage 1A - Todo Card</title>
+    <link rel="stylesheet" href="assets/css/Stylesheet.css">
 </head>
 <body>
     <article data-testid="test-todo-card">
-        <h2 data-testid="test-todo-title">Build HNG Todo card</h2>
-        <p data-testid="test-todo-description">Writing HTML, CSS and JS to complete Stage 0 task</p>
-        <div>
-            <span data-testid="test-todo-priority">High</span>
-            <span data-testid="test-todo-status">Pending</span>
+        <div id="todo-view-mode">
+            <label class="checkbox-container">
+                <input type="checkbox" data-testid="test-todo-complete-toggle"> 
+                Complete Task
+            </label>
+
+            <h2 data-testid="test-todo-title">Build HNG Todo card</h2>
+            
+            <div data-testid="test-todo-collapsible-section" id="todo-description-container" style="display: none;">
+                <p data-testid="test-todo-description">Writing HTML, CSS and JS to complete Stage 0 task</p>
+            </div>
+
+            <button data-testid="test-todo-expand-toggle" aria-expanded="false" aria-controls="todo-description-container">Show More</button>
+            
+            <div class="meta-info">
+                <span data-testid="test-todo-priority-indicator" class="priority-high">High</span>
+                <span data-testid="test-todo-status-control">Pending</span>
+            </div>
+            
+            <div class="time-container">
+                <p data-testid="test-todo-time-remaining">No date set</p>
+                <span data-testid="test-todo-overdue-indicator"></span>
+            </div>
+
+            <button id="edit-btn" data-testid="test-todo-edit-button">Edit Task</button>
         </div>
-        <div class="time-container">
-            <time data-testid="test-todo-due-date">Due April 16, 2026</time>
-            <p data-testid="test-todo-time-remaining">Due in 5 days</p>
-        </div>
-        <label>
-            <input type="checkbox" data-testid="test-todo-complete-toggle">
-            Mark as complete
-        </label>
-        <ul data-testid="test-todo-tags" style="background: none !important;">
-            <li data-testid="test-todo-tag-work">WORK</li>
-            <li data-testid="test-todo-tag-urgent">URGENT</li>
-        </ul>
-        <div class="actions">
-            <button data-testid="test-todo-edit-button">Edit</button>
-            <button data-testid="test-todo-delete-button">Delete</button>
-        </div>
+
+        <form id="todo-edit-mode" data-testid="test-todo-edit-form" style="display: none">
+            <label>Title:</label>
+            <input type="text" data-testid="test-todo-edit-title-input" id="edit-title" value="Build HNG Todo card">
+            
+            <label>Description:</label>
+            <textarea data-testid="test-todo-edit-description-input" id="edit-desc">Writing HTML, CSS and JS to complete Stage 0 task</textarea>
+            
+            <label>Priority:</label>
+            <select data-testid="test-todo-edit-priority-select" id="edit-priority">
+                <option value="Low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High" selected>High</option>
+            </select>
+            
+            <label>Due Date:</label>
+            <input type="datetime-local" data-testid="test-todo-edit-due-date-input" id="edit-date">
+            
+            <div class="form-actions">
+                <button type="button" data-testid="test-todo-save-button" id="save-btn" class="save-btn">Save</button>
+                <button type="button" data-testid="test-todo-cancel-button" id="cancel-btn" class="cancel-btn">Cancel</button>
+            </div>
+        </form>
     </article>
-     <script src="Script.js"></script>
+
+    <script src="assets/js/Script.js"></script>
 </body>
 </html>
