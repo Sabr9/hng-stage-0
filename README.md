@@ -2,7 +2,7 @@
 A professional, interactive Todo Card built with a focus on state management and accessibility. This project demonstrates the ability to handle DOM manipulation, real-time date calculations, and responsive styling.
 
 # Live Demo
-[Insert your Vercel or Netlify link here]
+stage-0-hng.netlify.app
 
 - Features
 Dynamic Status Toggle: Real-time "Pending" to "Done" status updates with visual strike-through feedback.
